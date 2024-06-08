@@ -48,7 +48,11 @@
             this.CategoryImageList = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CategoryListView
@@ -74,12 +78,14 @@
             listViewItem13,
             listViewItem14});
             this.CategoryListView.LargeImageList = this.CategoryImageList;
-            this.CategoryListView.Location = new System.Drawing.Point(12, 34);
+            this.CategoryListView.Location = new System.Drawing.Point(14, 42);
+            this.CategoryListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CategoryListView.Name = "CategoryListView";
-            this.CategoryListView.Size = new System.Drawing.Size(1161, 546);
+            this.CategoryListView.Size = new System.Drawing.Size(1306, 682);
             this.CategoryListView.TabIndex = 0;
             this.CategoryListView.TileSize = new System.Drawing.Size(280, 60);
             this.CategoryListView.UseCompatibleStateImageBehavior = false;
+            this.CategoryListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnOneClick);
             this.CategoryListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OnCategoryFolderClicked);
             // 
             // CategoryImageList
@@ -95,7 +101,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1185, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1333, 29);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -105,22 +111,45 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.renameToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 68);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(147, 32);
+            this.renameToolStripMenuItem.Text = "&Rename";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(147, 32);
+            this.deleteToolStripMenuItem.Text = "&Delete";
+            // 
             // CategoryView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 592);
+            this.ClientSize = new System.Drawing.Size(1333, 740);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.CategoryListView);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CategoryView";
             this.Text = "CategoryView";
             this.Load += new System.EventHandler(this.CategoryView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +160,8 @@
         public System.Windows.Forms.ListView CategoryListView;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

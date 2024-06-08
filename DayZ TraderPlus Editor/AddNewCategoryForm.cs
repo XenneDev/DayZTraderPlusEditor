@@ -24,7 +24,7 @@ namespace DayZ_TraderPlus_Editor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CategoryView.NewCategoryAdded(CategoryNameInput.Text);
+            CategoryView.OnNewCategoryAdded(CategoryNameInput.Text);
             this.Close();
         }
 

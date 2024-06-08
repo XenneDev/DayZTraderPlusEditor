@@ -41,12 +41,14 @@
             // 
             // MainFormMenuStrip
             // 
+            this.MainFormMenuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MainFormMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainFormMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.MainFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainFormMenuStrip.Name = "MainFormMenuStrip";
-            this.MainFormMenuStrip.Size = new System.Drawing.Size(1384, 28);
+            this.MainFormMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.MainFormMenuStrip.Size = new System.Drawing.Size(1557, 33);
             this.MainFormMenuStrip.TabIndex = 1;
             this.MainFormMenuStrip.Text = "MainFormMenuStrip";
             // 
@@ -59,14 +61,14 @@
             this.toolStripSeparator1,
             this.closToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newTraderConfigToolStripMenuItem
             // 
             this.newTraderConfigToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newTraderConfigToolStripMenuItem.Image")));
             this.newTraderConfigToolStripMenuItem.Name = "newTraderConfigToolStripMenuItem";
-            this.newTraderConfigToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newTraderConfigToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.newTraderConfigToolStripMenuItem.Text = "&New TraderConfig";
             this.newTraderConfigToolStripMenuItem.Click += new System.EventHandler(this.newTraderConfigToolStripMenuItem_Click);
             // 
@@ -74,7 +76,7 @@
             // 
             this.openTraderConfigToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openTraderConfigToolStripMenuItem.Image")));
             this.openTraderConfigToolStripMenuItem.Name = "openTraderConfigToolStripMenuItem";
-            this.openTraderConfigToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openTraderConfigToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.openTraderConfigToolStripMenuItem.Text = "&Open TraderConfig";
             this.openTraderConfigToolStripMenuItem.Click += new System.EventHandler(this.openTraderConfigToolStripMenuItem_Click);
             // 
@@ -82,29 +84,30 @@
             // 
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(215, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
             // 
             // closToolStripMenuItem
             // 
             this.closToolStripMenuItem.Name = "closToolStripMenuItem";
-            this.closToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.closToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.closToolStripMenuItem.Text = "&Close";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 615);
+            this.ClientSize = new System.Drawing.Size(1557, 769);
             this.Controls.Add(this.MainFormMenuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainFormMenuStrip;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "DayZ TraderPlus Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

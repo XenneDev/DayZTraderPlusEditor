@@ -59,11 +59,7 @@ namespace DayZ_TraderPlus_Editor
 
                 categoryView.CategoryListView.Clear();
 
-               
-                foreach (TraderCategory category in Global.TraderConfig.TraderCategories)
-                {
-                    categoryView.CategoryListView.Items.Add(category.CategoryName.ToString(), 0);
-                }
+      
 
                 
                 // Sort categories alphabetically

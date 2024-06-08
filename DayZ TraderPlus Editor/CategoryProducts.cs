@@ -32,7 +32,13 @@ namespace DayZ_TraderPlus_Editor.Models
             ProductsTable.Columns.Add("SellPrice", "Sell Price");
             ProductsTable.Columns.Add("DestockCoefficient", "Destock Coefficient");
 
-
+            if (Products == null || Products.Count <= 0)
+            {
+                Products = new List<string>();
+                ProductsTable.Rows.Clear();
+                AddEmptyRow();
+                
+            }
 
             foreach (string product in Products)
             {
@@ -44,6 +50,12 @@ namespace DayZ_TraderPlus_Editor.Models
             }
   
 
+
+        }
+
+        void AddEmptyRow()
+        {
+            ProductsTable.Rows.Add("", -1, -1, 1, 100, 10);
 
         }
 
@@ -69,6 +81,12 @@ namespace DayZ_TraderPlus_Editor.Models
 
             Global.TraderConfig.TraderCategories.Find(x => x.CategoryName == CategoryName).Products = products;
             this.Close();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+            AddEmptyRow();
         }
     }
 }
