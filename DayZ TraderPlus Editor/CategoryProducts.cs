@@ -66,6 +66,7 @@ namespace DayZ_TraderPlus_Editor.Models
             
             // Stop editing the cell
             ProductsTable.EndEdit();
+            bool isSaveError = false;
 
             foreach (DataGridViewRow row in ProductsTable.Rows)
             {
@@ -73,10 +74,21 @@ namespace DayZ_TraderPlus_Editor.Models
                 {
                     // Add product to list and when value of a cell is null, add a -1 as value
 
-
-                    string product = row.Cells[0].Value.ToString() + "," + float.Parse(row.Cells[1].Value.ToString()) + "," + float.Parse(row.Cells[2].Value.ToString()) + "," + float.Parse(row.Cells[3].Value.ToString()) + "," + float.Parse(row.Cells[4].Value.ToString()) + "," + float.Parse(row.Cells[5].Value.ToString());
-                    products.Add(product);
+                    try
+                    {
+                        string product = row.Cells[0].Value.ToString() + "," + float.Parse(row.Cells[1].Value.ToString()) + "," + float.Parse(row.Cells[2].Value.ToString()) + "," + float.Parse(row.Cells[3].Value.ToString()) + "," + float.Parse(row.Cells[4].Value.ToString()) + "," + float.Parse(row.Cells[5].Value.ToString());
+                        products.Add(product);
+                    }catch (Exception ex)
+                    {
+                        isSaveError = true;
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
+            }
+
+            if (isSaveError)
+            {
+                return;
             }
 
             Global.TraderConfig.TraderCategories.Find(x => x.CategoryName == CategoryName).Products = products;
